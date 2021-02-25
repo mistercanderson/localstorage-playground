@@ -32,14 +32,17 @@ function formFunctions() {
 };
 
 function addContact() {
+  debugger
   if (event.target === buttons.register) {
     var contact = {
       name: inputs.name.value,
       email: inputs.email.value
     };
-    contacts.push(contact);
-    localStorage.setItem(`${contact.name}`, JSON.stringify(contact));
-    displayContacts()
+    if (!contacts.includes(contact)) {
+      contacts.push(contact);
+      localStorage.setItem(`${contact.name}`, JSON.stringify(contact));
+    };
+    renderContacts()
   };
 };
 
@@ -51,10 +54,10 @@ function displayContacts() {
     for (var i = 0; i < keys.length; i++) {
       var contact = JSON.parse(localStorage.getItem(keys[i]));
       contacts.push(contact)
-      };
     };
-    renderContacts()
   };
+  renderContacts()
+};
 
 
 function renderContacts() {
