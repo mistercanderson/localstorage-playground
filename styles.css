@@ -44,8 +44,20 @@ input[type="button"]:hover {
   opacity: .8;
 }
 
+.display-area {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .display-area p {
   font-size: 24px;
   text-align: center;
-  padding: 10px 0
+  padding: 10px 0;
+}
+.contact-card {
+  height: 5em;
+  width: 5em;
+  margin: 2%;
+  border: 1px solid black;
+  overflow-wrap: anywhere;
 }
